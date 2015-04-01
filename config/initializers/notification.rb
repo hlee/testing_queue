@@ -7,5 +7,10 @@ ActiveSupport::Notifications.subscribe "acapi.acapi.events.local" do |name, star
   Rails.logger.debug(["notification:", name, start, finish, id, payload].join(" "))
 end
 
-Acapi::Publishers::UpstreamEventPublisher.new.run
 
+#Acapi::Publishers::UpstreamEventPublisher.new.run
+
+Acapi::Subscribers::Logger.register("acapi.logger") 
+
+extend Acapi::Publishers::Logger
+logger("sending msg from app other than enroll")
