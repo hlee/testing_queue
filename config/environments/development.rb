@@ -35,6 +35,11 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+  config.acapi.publish_amqp_events = true
+  config.acapi.app_id = "new_app"        
+  config.acapi.remote_broker_uri = "amqp://guest:guest@localhost:5672" 
+  config.acapi.remote_event_queue = "acapi.events.local"                         
+  config.acapi.remote_request_exchange = ""
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
