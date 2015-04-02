@@ -38,8 +38,8 @@ Rails.application.configure do
   config.acapi.publish_amqp_events = true
   config.acapi.app_id = "new_app"        
   config.acapi.remote_broker_uri = "amqp://guest:guest@localhost:5672" 
-  config.acapi.remote_event_queue = "acapi.events.local"                         
-  config.acapi.remote_request_exchange = ""
+  config.acapi.remote_event_queue = "acapi.queue.events.local"
+  config.acapi.remote_request_exchange = "acapi.exchange.events.local"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
